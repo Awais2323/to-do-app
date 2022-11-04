@@ -140,7 +140,8 @@ exports.updateTask = async (req, res) => {
     const {
         summary,
         description,
-        date
+        date,
+        flag
     } = req.body;
 
     try {
@@ -151,6 +152,7 @@ exports.updateTask = async (req, res) => {
         newTask.summary = summary;
         newTask.description = description;
         newTask.date = date;
+        newTask.flag = flag;
 
         await newTask.save().then(data => {
             res.status(200).json({

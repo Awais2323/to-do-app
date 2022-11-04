@@ -1,15 +1,25 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Login } from './components/Login/Login';
-import { Model } from './components/Modal/Modal';
 import { Task } from './components/Task/Task';
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  console.log(token);
+
+  useEffect(() => {
+    setToken(localStorage.getItem('token'))
+  }, [localStorage.getItem('token')])
+
   return (
-    <div >
-    {/* <Login/>     */}
-<Task/>
-{/* <Model/> */}
-    </div>
+    <>
+      {
+        token ?
+        <Task setToken={setToken} /> :
+        <Login setToken={setToken} />  
+
+      }
+    </>
   );
 }
 

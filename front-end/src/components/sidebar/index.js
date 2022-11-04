@@ -3,10 +3,7 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LogoutIcon from '@mui/icons-material/Logout';
 import "./style.css";
-import AccessAlarmsIcon from "@mui/icons-material/AccessAlarms";
-import { useState } from "react";
-export const Sidebar = ({index, setIndex}) => {
-  console.log("sidebar")
+export const Sidebar = ({index, setIndex, setToken}) => {
   return (
         <Grid
           container
@@ -15,7 +12,8 @@ export const Sidebar = ({index, setIndex}) => {
           alignItems="center"
           height={"100vh"}
           style={{
-            padding: "42px 0px"
+            padding: "42px 0px",
+            cursor: "pointer",
           }}
         >
         <Grid container>
@@ -61,7 +59,11 @@ export const Sidebar = ({index, setIndex}) => {
           <Grid container
             direction="row"
             justifyContent="flex-start"
-              alignItems="center"
+          alignItems="center"
+          onClick={() => {
+            setToken('')
+            localStorage.setItem('')
+        }}
               style={{ backgroundColor: "#FFFFFF", color: "#000000", width: "70%", height: "55px", borderRadius: "0px 100px 100px 0px", }}
         >
           <Grid item xs={1} >
@@ -70,7 +72,8 @@ export const Sidebar = ({index, setIndex}) => {
             <LogoutIcon htmlColor="#000000" fontSize="small" />
           </Grid>
           <Grid item xs={3}>
-            <Typography style={{fontSize:"18px", fontWeight: "500"}}>
+            <Typography style={{ fontSize: "18px", fontWeight: "500" }}
+              >
             Logout
             </Typography>
           </Grid>

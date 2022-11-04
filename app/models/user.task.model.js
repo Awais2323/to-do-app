@@ -16,6 +16,10 @@ module.exports = (sequelize, Sequelize) => {
         date : {
                 type : Sequelize.STRING
         },
+        flag: {
+            type: Sequelize.BOOLEAN,
+            defaultValue: false,
+        },
         userId: {
             type: Sequelize.INTEGER,
         }

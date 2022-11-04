@@ -25,7 +25,7 @@ app.use(express.static(path.resolve(__dirname, './front-end/build')));
 
 // database
 const db = require("./app/models");
-db.sequelize.sync();
+db.sequelize.sync({ alert: true });
 
 // Handle GET requests to /api route
 require("./app/routes/api.routes")(app);
