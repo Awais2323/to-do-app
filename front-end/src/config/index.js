@@ -1,9 +1,8 @@
 import axios from 'axios'
 
 export const axiosClient = axios.create({
-    // baseURL: 'https://hrdsp.herokuapp.com/api/',
-    // baseURL: 'https://task-to-do-nov.herokuapp.com/api/',
-    baseURL: 'http://localhost:8001/api/',
+    baseURL: 'https://task-to-do-nov.herokuapp.com/api/',
+    // baseURL: 'http://localhost:8001/api/',
 })
 
 const token = localStorage.getItem('token')
