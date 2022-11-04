@@ -2,10 +2,10 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './.env'});
 
 module.exports = {
-  HOST: 'localhost',
-  USER: 'root',
-  PASSWORD: 'root1234',
-  DB: 'todoApp',
+  HOST: 'eu-cdbr-west-03.cleardb.net',
+  USER: 'bf5daaba5dd6a0',
+  PASSWORD: 'fa5906bd',
+  DB: 'heroku_7b39341013da9cc',
   dialect: "mysql",
   pool: {
     max: 5,
