@@ -23,7 +23,12 @@ app.use(
 
 app.use(express.static(path.resolve(__dirname, './front-end/build')));
 
+// database
+const db = require("./app/models");
+db.sequelize.sync();
+
 // Handle GET requests to /api route
+require("./app/routes/api.routes")(app);
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
@@ -33,10 +38,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './front-end/build', 'index.html'));
 });
 
-require("./app/routes/spotify.routes")(app);
-
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './front-end', 'index.js'));
+  res.sendFile(path.resolve(__dirname, './front-end/build', 'index.html'));
 });
 
 // set port, listen for requests
