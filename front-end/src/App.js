@@ -1,24 +1,34 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { Login } from './components/Login/Login';
-import { Task } from './components/Task/Task';
+import Router from './routes';
+// theme
+import ThemeProvider from './theme';
+// components
+import ScrollToTop from './components/scroll-to-top';
+import { StyledChart } from './components/chart';
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token'))
-  console.log(token);
-
-  useEffect(() => {
-    setToken(localStorage.getItem('token'))
-  }, [localStorage.getItem('token')])
+ 
+  // useEffect(() => {
+  //   function start() {
+  //     gapi.client.init({
+  //       clientId:clientId,
+  //       scope:[]
+  //     })
+  //   };
+  //   gapi.load('client:auth2',start)
+  //   // setToken(localStorage.getItem('token'))
+  // }
+  
+  // )
 
   return (
     <>
-      {
-        token ?
-        <Task setToken={setToken} /> :
-        <Login setToken={setToken} />  
+     
+     <ThemeProvider>
+      <ScrollToTop />
+      <StyledChart />
+      <Router />
+    </ThemeProvider>
 
-      }
     </>
   );
 }

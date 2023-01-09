@@ -35,6 +35,8 @@
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.15",
     "pm2": "^5.2.0",
+    "react-google-login": "^5.2.2",
+    "react-social-login-buttons": "^3.6.1",
     "sequelize": "^6.15.0",
     "spotify-web-api-node": "^5.0.2"
   }
